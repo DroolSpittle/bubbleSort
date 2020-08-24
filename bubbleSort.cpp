@@ -22,9 +22,13 @@ int main()
 
     randomInts.close();
 
+    //printVector(decreasingInts);
+
     bubbleSort(decreasingInts);
 
-    printVector(decreasingInts);
+    //printVector(decreasingInts);
+
+    cout << "The largest element in the array is: " << decreasingInts[0];
 
     return 0;
 }
@@ -37,13 +41,17 @@ void bubbleSort(vector<int>& a)
         swap = false;
         for(size_t i = 0; i < a.size()-1; i++)
         {
-            if(a[i]>a[i+1])
+            if(a[i]<a[i+1])
             {
                 a[i] += a[i+1];
+                //cout << "a[i]: " << a[i] << " a[i+1]:" << a[i+1] << "\n";
                 a[i+1] = a[i] - a[i+1];
+                //cout << "a[i]: " << a[i] << " a[i+1]:" << a[i+1] << "\n";
                 a[i] -= a[i+1];
+                //cout << "a[i]: " << a[i] << " a[i+1]:" << a[i+1] << "\n";
                 swap = true;
             }
+            
         }
     }
 }
